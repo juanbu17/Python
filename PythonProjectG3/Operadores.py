@@ -9,7 +9,7 @@ mult = num1 * num2
 div = num2 / num1
 mod = num2 % num1
 
-print(f"\nEl resultado de la suma es: {sum} \nEl resultado de la resta es {rest}n\ El resultado de la multiplicacion es {mult}n\El resultado de la divosion es {div}n\El resultado del modulo es {mod}")
+print(f"\nEl resultado de la suma es: {sum} \nEl resultado de la resta es {rest}\n El resultado de la multiplicacion es {mult}\nEl resultado de la divosion es {div}\nEl resultado del modulo es {mod}")
 
 
 

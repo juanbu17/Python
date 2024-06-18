@@ -32,10 +32,13 @@ num1 = num1 +num2
 num2 += num1
 
 # Jwerarquia de operadores
-""""
-1. ()
-2. potenciacio y radicacion   ^, rad
-3. *, /, %
-4. +,-
-5. >,> >=, >= ,==, !=
-6. =, +=, -=, *=,/=
+
+# 1. ()
+# 2. potenciacio y radicacion   ^, rad
+# 3. *, /, %
+# 4. +,-
+# 5. >,> >=, >= ,==, !=
+# 6. =, +=, -=, *=,/=
+
+
+# comentarios de varias lines con 3 comillas seguidas """

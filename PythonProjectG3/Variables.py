@@ -19,10 +19,10 @@ print(type(age))
 isActive = True
 print(type(isActive))
 
-ages = [ 15, 19, 25, 32]# lista es un tipo de dato se usa para datos mutables que cambian  la notacion es snake separado por underscore
+ages = [ 15, 19, 25, 32]# lista es un tipo de dato se usa para datos mutables que cambian  la notacion es snake separado por underscore (gion bajo)
 print(type(ages))
 
-week_days = ("Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo")# las tuplas se hacen con parentesis y se usan paar cosas inmutables 
+week_days = ("Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo")# las tuplas se hacen con parentesis y se usan para cosas inmutables 
 print(type(week_days))
 
 user = {"Name":"Maria","Age":29}  # tipo diccionario
@@ -33,7 +33,7 @@ print(type(notes))# tipo de dato: conjuntos
 
 
 #------------------------------------------------------------------
-# convertir un Strin a otro tipo
+# convertir un String a otro tipo
 
 #scaner. input
 num1 = int(input("Agregue el num 1 y sumelo con el 2"))
