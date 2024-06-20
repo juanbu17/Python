@@ -36,19 +36,19 @@ print(type(notes))# tipo de dato: conjuntos
 # convertir un String a otro tipo
 
 #scaner. input
-num1 = int(input("Agregue el num 1 y sumelo con el 2"))
+num1 = int(input("Agregue un num  para sumarlo al num 2\n"))
 sum = num1+2
 
 #print("El resultado es: ",sum)
 #print("El resultado es: "+sum)
-#print(f"El resultado es: {sum}")
+print(f"El resultado es: {sum}")
 
 
-
+# definir una funcion en python:
 
 def sum2(num1):
     num2 = 2   
     return num1 + num2 # siempre debe quedar indentado minimo dos espacios
 
 result = sum2(num1)
-print(f"El resultado de la suma es {result}")
+print(f"El resultado de la suma es:  {result}")

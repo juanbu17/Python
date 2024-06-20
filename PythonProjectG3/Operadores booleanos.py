@@ -1,8 +1,8 @@
 
 #Operadores de comparacion
 
-num1 = int(input("Agregue el primer numero"))
-num2 = int(input("Agregue el segundo numero"))
+num1 = int(input("Agregue el primer numero: "))
+num2 = int(input("Agregue el segundo numero: "))
 
 
 greatest_than = num1>num2
