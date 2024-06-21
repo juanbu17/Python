@@ -1,5 +1,5 @@
 
-day="junio"
+day="JUNIO"
 match day :
     case 'lunes':
         print("Hoy es lunes")
