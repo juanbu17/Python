@@ -13,7 +13,7 @@ equal = num2==num1
 not_equal = num2!=num1
 
 
-print(great_equal)
+print(greatest_than)
 print(less_than)
 print(great_equal)
 print(less_equal)
