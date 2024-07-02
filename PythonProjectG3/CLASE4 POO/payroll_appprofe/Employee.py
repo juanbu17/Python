@@ -1,4 +1,4 @@
-from payroll_app.User import User
+from User import User
 
 
 class Employee(User):
@@ -32,9 +32,9 @@ class Employee(User):
     def create_user(self, employees):
         #employee = []
         super().create_user(employees)
-        self._rol = input("Rol")
+        self._rol = input("Rol: ")
         #employee.append(self._rol)
-        self._salary = input("Salario")
+        self._salary = input("Salario: ")
         #employee.append(self._salary)
 
         self.employees.append([self._employee_id, self._name_employee, self._last_name_employee, self._email, self._password, self._rol, self._salary])
