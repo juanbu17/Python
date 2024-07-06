@@ -1,4 +1,4 @@
-from payroll_app.User import User
+from User import User
 
 
 class Employee(User):
@@ -29,18 +29,18 @@ class Employee(User):
 
     #employees =[]
 
-    def create_user(self, employees):
+    def create_user(self):
         #employee = []
-        super().create_user(employees)
-        self._rol = input("Rol")
+        super().create_user()
+        self._rol = input("Rol: ")
         #employee.append(self._rol)
-        self._salary = input("Salario")
+        self._salary = input("Salario: ")
         #employee.append(self._salary)
 
         self.employees.append([self._employee_id, self._name_employee, self._last_name_employee, self._email, self._password, self._rol, self._salary])
 
         #User.employees.append(employee)
 
-    def list_employee_data(self, employees):
-        for item in employees:
+    def list_employee_data(self):
+        for item in self.employees:
             print(item)
