@@ -1,0 +1,26 @@
+# Crea una plicación que se pueda inicializar y permita navegar en menu [registrar, iniciar sesión, salir]l
+# crear registro del usuario
+# guardarlo en una lista
+# imprimir los datos del usuario
+# el usuario solo puede ver sus datos si inicia sesión
+# Al iniciar sesión deberá tener un menú que le ponga a elegir entre datos o calcular el salario neto
+# El cuál debe imprimir el nombre, apellido, cargo, salario bruto, descuento de salud, descuento de pension y salario neto
+"""
+ Crea una aplicación sobre una farmacia en python que se pueda inicializar y permita navegar en menu [registrar, iniciar sesión, salir]l
+# crear registro del usuario
+guardarlo en una lista
+ademas imprimir los datos del usuario, el usuario solo puede ver sus datos si inicia sesión.
+Al iniciar sesión deberá tener un menú que le ponga a elegir entre datos o calcular el salario neto
+Adicionalmente  debe imprimir el nombre, apellido, cargo, salario bruto, descuento de salud, descuento de pension y salario neto
+# Crea una plicación que se pueda inicializar y permita navegar en menu [registrar, iniciar sesión, salir]l
+crear registro del usuario
+guardarlo en una lista imprimir los datos del usuario
+el usuario solo puede ver sus datos si inicia sesión
+Al iniciar sesión deberá tener un menú que le ponga a elegir entre datos o calcular el salario neto
+ El cuál debe imprimir el nombre, apellido, cargo, salario bruto, descuento de salud, descuento de pension y salario neto
+
+"""
+
+
+Este código define una lista usuarios que almacenará los registros de los usuarios. La función registrar_usuario permite registrar un nuevo usuario y lo agrega a la lista. La función iniciar_sesion permite iniciar sesión con un usuario existente y llama a la función menu_usuario que muestra un menú al usuario. La función menu_usuario permite al usuario ver sus datos o calcular su salario neto. La función imprimir_datos_usuario imprime los datos del usuario y la función calcular_salario_neto calcula y imprime el salario neto del usuario.
+
