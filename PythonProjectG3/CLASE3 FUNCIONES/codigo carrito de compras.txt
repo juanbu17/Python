@@ -1,0 +1,87 @@
+class Item:
+    def __init__(self, nombre, precio, cantidad):
+        self.nombre = nombre
+        self.precio = precio
+        self.cantidad = cantidad
+
+    def __str__(self):
+        return f"{self.nombre} - ${self.precio} x {self.cantidad}"
+
+
+class Carrito:
+    def __init__(self):
+        self.items = []
+
+    def agregar_item(self, item):
+        self.items.append(item)
+
+    def quitar_item(self, nombre):
+        self.items = [item for item in self.items if item.nombre != nombre]
+
+    def mostrar_carrito(self):
+        if not self.items:
+            print("El carrito está vacío.")
+            return
+        total = sum(item.precio * item.cantidad for item in self.items)
+        for item in self.items:
+            print(item)
+        print(f"Total: ${total:.2f}")
+
+    def vaciar_carrito(self):
+        self.items = []
+
+
+class Menu:
+    def __init__(self):
+        self.carrito = Carrito()
+
+    def mostrar_menu(self):
+        print("\nOpciones del Carrito de Compras:")
+        print("1. Agregar item")
+        print("2. Quitar item")
+        print("3. Mostrar carrito")
+        print("4. Vaciar carrito")
+        print("5. Salir")
+
+    def ejecutar(self):
+        while True:
+            self.mostrar_menu()
+            opcion = input("Selecciona una opción: ")
+
+            if opcion == "1":
+                self.agregar_item()
+            elif opcion == "2":
+                self.quitar_item()
+            elif opcion == "3":
+                self.mostrar_carrito()
+            elif opcion == "4":
+                self.vaciar_carrito()
+            elif opcion == "5":
+                print("Saliendo...")
+                break
+            else:
+                print("Opción no válida. Inténtalo de nuevo.")
+
+    def agregar_item(self):
+        nombre = input("Nombre del item: ")
+        precio = float(input("Precio del item: "))
+        cantidad = int(input("Cantidad del item: "))
+        item = Item(nombre, precio, cantidad)
+        self.carrito.agregar_item(item)
+
+    def quitar_item(self):
+        nombre = input("Nombre del item a quitar: ")
+        self.carrito.quitar_item(nombre)
+
+    def mostrar_carrito(self):
+        print("\nCarrito de compras:")
+        self.carrito.mostrar_carrito()
+
+    def vaciar_carrito(self):
+        self.carrito.vaciar_carrito()
+        print("El carrito ha sido vaciado.")
+
+
+if __name__ == "__main__":
+    menu = Menu()
+    menu.ejecutar()
