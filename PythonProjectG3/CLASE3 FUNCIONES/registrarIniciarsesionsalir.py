@@ -10,7 +10,7 @@ def register():
         return
     user = {"username": username, "password": password}
     users.append(user)
-    print("Usuario registrado con éxito")
+    print("El usuario "+username+" fue registrado con éxito")
 
 def login():
     username = input("Ingrese un nombre de usuario: ")
@@ -19,25 +19,27 @@ def login():
         if user["username"] == username and user["password"] == password:
             print("Inicio de sesión exitoso")
             return
-    print("Credenciales incorrectas")
+    print("\n\n Sus credenciales no son correctas")
 
 def main():
     while True:
-        print("Menú:")
+        print("\n\n")
+        print("---------Menú principal:----------")
+        print("Seleccione una opción para iniciar")
         print("1. Registrar")
         print("2. Iniciar sesión")
         print("3. Salir")
-        option = input("Seleccione una opción: ")
+        option = input("Opción seleccionada: ")
 
         if option == "1":
             register()
         elif option == "2":
             login()
         elif option == "3":
-            print("Adiós!")
+            print("App Finaliza!")
             break
         else:
             print("Opción inválida")
 
-if __name__ == "__main__":
-    main()
+
+main()
