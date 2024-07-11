@@ -23,7 +23,9 @@ def login():
 
 def main():
     while True:
-        print("Menú:")
+        print("\n\n\n")
+        print("---------Menú principal:----------")
+        print("Seleccione una opción para iniciar")
         print("1. Registrar")
         print("2. Iniciar sesión")
         print("3. Salir")
