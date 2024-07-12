@@ -26,15 +26,7 @@ class Empleado(Usuario):
     def salario(self, salario):
         self._salario = salario
 
-    nomina = []
-    def crea_empleado(self):
+    def create_employee(self):
         super().create_user()
-        self._rol = input("Ingrese su rol en la empresa: ")
+        self._rol = input("Ingrese su rol enla empresa: ")
         self._salario = int(input("Ingrese su salario: "))
-
-
-
-def listar(self):
-    for empleado in self.nomina:
-        print("Empleado agregado correctamente")
-        print(empleado)
