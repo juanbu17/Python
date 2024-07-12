@@ -28,29 +28,28 @@ class Usuario:
 
     usuarios = []
     def create_user(self):
-        print("\n\nVamos a agregarte a nuesta base de datos")
-        self._nombre = input("Ingresa el nombre: ")
+        print("Vamos a agregarte a nuesta base de datos")
+        self._nombre = input("Ingresa el nombre:\n")
         self.usuarios.append(self._nombre)
-        self._apellido = input("Ingresa el apellido: ")
+        self._apellido = input("Ingresa el apellido:\n")
         self.usuarios.append(self._apellido)
 
 
     def list(self):
         for item in self.usuarios:
             print(item)
+        print("Has sido agregado con exito\n")
 
-print("Has sido agregado con exito")
-
-# registrar el usuario nuevo:
-users = []
-def registrar():
-    username = input("Ingrese un nombre de usuario: ")
-    password = input("Ingrese una contraseña: ")
-    if any(user["username"] == username for user in users):
-        print("El usuario ya esta registrado!!!")
-        return
-    user = {"username": username, "password": password}
-    users.append(user)
-    print("Registro exitoso")
-
-
+    # registrar el usuario nuevo:
+    users = []
+    def registrar(self):
+        user = []
+        username = input("Ingrese un nombre de usuario:\n")
+        password = input("Ingrese una contraseña:\n")
+        if any(user["username"] == username for user in self.users):
+            print("El usuario ya esta registrado!!!\n")
+            return
+        self.users.append(username)
+        self.users.append(password)
+        self.users.append(user)
+        print("Registro exitoso\n")

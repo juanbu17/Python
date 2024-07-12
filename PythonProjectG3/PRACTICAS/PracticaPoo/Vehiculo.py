@@ -37,8 +37,17 @@ class Vehiculo():
     def costo_servicio(self,costo_servicio):
         self._costo_servicio = costo_servicio
 
+    vehiculo_usuario = []
+
     def crea_vehiculo(self):
         #super().create_user()
-        self._tipo_vehiculo = input("Ingrese el tipo (carro, moto o camión: ")
-        self._marca = input("Ingrese la marca: ")
-        self._costo_servicio = input("Indique el costo del servicio")
+        self._tipo_vehiculo = input("Ingrese el tipo (carro, moto o camión):\n")
+        self.vehiculo_usuario.append(self._tipo_vehiculo)
+        self._marca = input("Ingrese la marca:\n")
+        self.vehiculo_usuario.append(self._marca)
+        self._costo_servicio = input("Indique el costo del servicio:\n")
+        self.vehiculo_usuario.append(self._costo_servicio)
+
+    def listar_datos_vehiculo(self):
+        for dato in self.vehiculo_usuario:
+            print(dato)
