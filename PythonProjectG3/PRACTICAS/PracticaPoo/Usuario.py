@@ -39,7 +39,7 @@ class Usuario:
         for item in self.usuarios:
             print(item)
 
-print("Has sido agregado con exito")
+#print("Has sido agregado con exito")
 
 # registrar el usuario nuevo:
 users = []

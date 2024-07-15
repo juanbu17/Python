@@ -4,7 +4,7 @@ from Vehiculo import Vehiculo
 
 
 usuario = Usuario(None, None)
-usuario.registrar()
+#usuario.registrar()
 
 empleado = Empleado(None, None, None, None)
 empleado.crea_empleado()

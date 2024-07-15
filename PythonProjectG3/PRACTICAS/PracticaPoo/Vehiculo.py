@@ -41,4 +41,4 @@ class Vehiculo():
         #super().create_user()
         self._tipo_vehiculo = input("Ingrese el tipo (carro, moto o camión: ")
         self._marca = input("Ingrese la marca: ")
-        self._costo_servicio = input("Indique el costo del servicio")
+        self._costo_servicio = input("Indique el costo del servicio: ")

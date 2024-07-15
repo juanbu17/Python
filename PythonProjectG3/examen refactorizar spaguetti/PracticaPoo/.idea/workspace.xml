@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d92f26fe-39e9-446e-ab88-dab50531358e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ExamenRefactorizar/Taller/Testing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ExamenRefactorizar/Taller/Usuario.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamenRefactorizar/Taller/Usuario.py" afterDir="false" />
-    </list>
+    <list default="true" id="d92f26fe-39e9-446e-ab88-dab50531358e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +10,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2j87d7RgvXUdojTEFl3bnJ7oYGa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,7 +22,8 @@
   "keyToString": {
     "Python.Empleado.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/juanbuma/3D Objects/Python/Python/PythonProjectG3/examen refactorizar spaguetti/PracticaPoo"
   }
 }]]></component>
   <component name="SharedIndexes">
