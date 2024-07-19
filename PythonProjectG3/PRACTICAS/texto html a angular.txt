@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    
+        <!--Menu Cabecera-->
+        <header class=" cabecera">
+
+            <div class="logo">
+                <img src="imagenes/LOGO3.png" alt="logo">
+    
+            </div>
+    
+           <nav class="menu">
+            <div >
+                <ul class="lista">
+                    <li>Blog</li>
+                    <li>Contacto</li>
+    
+                </ul>
+            </div>
+
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Paginas Relacionadas</a></li>
+                </ul>
+           </nav> 
+        </header>
+
+          <!--Seccion 1 (banner ppal)-->
+
+          <section class="banner-ppal">
+            <div>
+             <h1>ROOM FESTIVAL</h1>
+            
+            
+            <p>
+                Somos una tienda de música  donde encontrarás guitarras, amplificadores
+                , máquinas de efectos, baterías, equipos de sonido e iluminación de las marcas más destacadas.
+                Puedes comprar online y tu compra la recoges en la tienda más cerca de tu casa.
+            </p>
+     
+            <a href="#">Click aqui</a>
+         </div>
+         </section> 
+     
+         <!--Seccion Informativa-->
+
+         <section class="multimedia">
+
+           
+            <div class="cuerpo">
+               
+                <div class="izquierdo">
+                    <h2>Clasificación Instrumental</h2>
+                    <figure>
+                        <img src="imagenes/vientos.jpg" alt="">
+                      
+                    </figure>
+                    <fi
+Copilot
+Usando
+la web
+Generando respuestas…
+
+Enviado por Copilot:
+¡Entendido! Vamos a convertir tu código HTML a un componente de Angular y usar Python para generar contenido dinámico. Aquí tienes los pasos detallados:
+
+Paso 1: Crear un proyecto Angular
+Primero, asegúrate de tener Angular CLI instalado. Si no lo tienes, puedes instalarlo con el siguiente comando:
+
+npm install -g @angular/cli
+
+Luego, crea un nuevo proyecto Angular:
+
+ng new mi-proyecto-angular
+cd mi-proyecto-angular
+
+Paso 2: Crear un componente Angular
+Crea un nuevo componente donde integrarás tu código HTML:
+
+ng generate component mi-componente
+
+Paso 3: Integrar el código HTML en el componente Angular
+Integra tu código HTML en el archivo mi-componente.component.html:
+
+HTML
+
+<header class="cabecera">
+    <div class="logo">
+        <img src="assets/imagenes/LOGO3.png" alt="logo">
+    </div>
+    <nav class="menu">
+        <div>
+            <ul class="lista">
+                <li>Blog</li>
+                <li>Contacto</li>
+            </ul>
+        </div>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Paginas Relacionadas</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="banner-ppal">
+    <div>
+        <h1>ROOM FESTIVAL</h1>
+        <p>
+            Somos una tienda de música donde encontrarás guitarras, amplificadores,
+            máquinas de efectos, baterías, equipos de sonido e iluminación de las marcas más destacadas.
+            Puedes comprar online y tu compra la recoges en la tienda más cerca de tu casa.
+        </p>
+        <a href="#">Click aqui</a>
+    </div>
+</section>
+
+<section class="multimedia">
+    <div class="cuerpo">
+        <div class="izquierdo">
+            <h2>Clasificación Instrumental</h2>
+            <figure>
+                <img src="assets/imagenes/vientos.jpg" alt="">
+            </figure>
+        </div>
+    </div>
+</section>
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Paso 4: Usar Python para generar contenido dinámico
+Si necesitas que Python genere contenido dinámico para tu aplicación Angular, puedes usar Flask para crear una API que tu aplicación Angular pueda consumir.
+
+Crear una API con Flask
+Instala Flask:
+
+pip install Flask
+
+Crea un archivo app.py con el siguiente contenido:
+
+Python
+
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    data = {
+        'message': '¡Hola desde Flask!',
+        'items': ['Elemento 1', 'Elemento 2', 'Elemento 3']
+    }
+    return jsonify(data)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Consumir la API en Angular
+En tu componente Angular, usa el servicio HttpClient para consumir la API:
+
+TypeScript
+
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-mi-componente',
+  templateUrl: './mi-componente.component.html',
+  styleUrls: ['./mi-componente.component.css']
+})
+export class MiComponenteComponent implements OnInit {
+  data: any;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.http.get('http://localhost:5000/api/data').subscribe(response => {
+      this.data = response;
+    });
+  }
+}
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Y en el archivo mi-componente.component.html, muestra los datos:
+
+HTML
+
+<h1>{{ data?.message }}</h1>
+<ul>
+  <li *ngFor="let item of data?.items">{{ item }}</li>
+</ul>
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Con estos pasos, tendrás una aplicación Angular que consume datos dinámicos generados por una API en Python. ¡Espero que te sea útil! ¿Hay algo más en lo que pueda ayudarte?
+
+Más información
+
+1
+
+stackoverflow.com
+2
+
+es.stackoverflow.com
+3
+
+scriptologia.com
+4
+
+es.stackoverflow.com
+5
+
+codigospython.com
+6
+
+flask.pocoo.org
+7
+
+github.com
+8
+
+github.com
+9
+
+github.com
+10
+
+github.com
++6 más
+
+
+
