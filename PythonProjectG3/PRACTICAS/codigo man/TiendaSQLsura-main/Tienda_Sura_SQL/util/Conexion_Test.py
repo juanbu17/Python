@@ -1,6 +1,6 @@
 
 
-from util.Conexion import Conexion
+#from util.Conexion import Conexion
 
 def test_conexion_db():
     try:

@@ -1,0 +1,76 @@
+CREATE DATABASE tienda_sura;
+
+use tienda_sura;
+
+create table costumer_type(
+type_id int AUTO_INCREMENT not null,
+costumer_type varchar(55) not null,
+CONSTRAINT pk_costumer_type PRIMARY KEY (type_id)
+);
+
+create table costumer (
+costumer_id int not null, 
+costumer_name varchar(55) not null,
+costumer_last_name varchar(55) not null,
+email varchar(55) not null,
+cost_password varchar(55) not null,
+costumer_type int not null,
+points int not null,
+constraint pk_costumer primary key(costumer_id),
+constraint fk_costumer_tyhpe foreign key(costumer_type)
+references costumer_type(type_id) 
+);
+
+create table position_employee (
+position_id int auto_increment not null, 
+position_name varchar(55) not null,
+constraint pk_position primary key(position_id)
+);
+
+create table employee(
+employee_id int auto_increment not null,
+employee_name varchar(55) not null, 
+last_name_employee varchar(55) not null, 
+email varchar(55) not null, 
+emp_password varchar(8) not null, 
+position_employee int not null,
+salary float not null, 
+constraint pk_employee primary key (employee_id),
+constraint fk_position foreign key(position_employee) 
+references position_employee(position_id)
+);
+
+create table category(
+category_id int auto_increment not null, 
+name_Category varchar(55) not null, 
+constraint pk_category primary key (category_id)
+);
+
+CREATE TABLE product( 
+product_id int AUTO_INCREMENT not null,
+product_name varchar(55) not null,
+description_prod varchar(250) not null,
+category int not null,
+price float not null,
+quantity int not null,
+CONSTRAINT pk_product PRIMARY KEY (product_id),
+CONSTRAINT fk_category FOREIGN KEY (category) REFERENCES category(category_id)
+);
+
+CREATE TABLE sales(
+sale_id int auto_increment not null,
+sale_date timestamp not null,
+costumer int not null, 
+product int not null, 
+price float not null, 
+quantity int not null, 
+total float as (price*quantity),
+employee int not null, 
+CONSTRAINT pk_sale PRIMARY KEY (sale_id), 
+CONSTRAINT fk_costumer FOREIGN KEY (costumer) 
+REFERENCES costumer(costumer_id), 
+CONSTRAINT fk_product FOREIGN KEY (product) 
+REFERENCES product(product_id), 
+CONSTRAINT fk_employee FOREIGN KEY (employee) 
+REFERENCES employee(employee_id)
+ );
