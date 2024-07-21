@@ -47,3 +47,6 @@ class Employee():
     def list_employee_data(self):
         for item in self.employees:
             print(item)
+
+    def delete_employee(self):
+        
