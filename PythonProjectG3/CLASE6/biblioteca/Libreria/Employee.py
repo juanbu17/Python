@@ -32,16 +32,13 @@ class Employee():
         self._salary = salary
 
 
-    employees = []
-
-    def create_user(self):
-        employee = []
-        self._rol_position = input("Rol")
-        employee.append(self._rol_position)
-        self._salary = input("Salario")
-        employee.append(self._salary)
-
-        self.employees.append([self._rol_position,self._salary])
+    db = Connection(host = 'localhost',port = '3306',user = 'root',password ='',database ='library')
+    db.connect()
+    def create_employee(self,db):
+        super().create_user()
+        self._job_position = input("Escriba su área en la empresa")
+        self._salary =  float(input("Ingrese su salario"))
+        self._employee_insert(db)
 
 
     def list_employee_data(self):
@@ -49,4 +46,8 @@ class Employee():
             print(item)
 
     def delete_employee(self):
-        
+
+    def employee_insert(self,db):
+        query = ("INSERT INTO employee(id_employee, name_employee, last_nane_employee, email ,password , job_position ,salary ) VALUES(%s,%s,%s,%s,%s,%s,%s,)")
+        VALUES = (self._id_employee, self._name_employee, self._last_nane_employee,self._email, self._password,self._job_position,self._salary)
+

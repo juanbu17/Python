@@ -1,0 +1,18 @@
+create table employee(
+id_employee int primary key not null,
+name_employee varchar(50) not null,
+last_nane_employee varchar(50) not null,
+email nvarchar(50)
+password nvarchar(50) not null,
+job_position varchar(35)  not null,
+salary decimal(10,2) not null,
+)
+
+
+
+create table category(
+category_id int primary key auto_increment not null,
+category_name varchar(35) not null,
+foreign key (book_id) references Books(id)
+)
+

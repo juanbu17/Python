@@ -25,6 +25,9 @@ class Category:
     def category_name(self, category_name):
         self._category_name = category_name
 
+    db = Connection(host = 'localhost',port = '3306',user = 'root',password ='',database ='library')
+    db.connect()
+
     categories = {}
 
     def create_category(self):
