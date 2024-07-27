@@ -1,7 +1,5 @@
 from View.View_Costumer import View_Costumer
 from View.View_Employee import View_Employee
-from domain.Costumer import Costumer
-from domain.Person_Type import Person_Type
 from util.Conexion import Conexion
 
 
