@@ -1,0 +1,117 @@
+Para integrar FastAPI con tu página web, puedes usar FastAPI para crear una API que maneje la lógica del backend, mientras que tu página HTML seguirá siendo la interfaz de usuario. Aquí te explico los pasos básicos para hacer esto:
+
+1. Instalar FastAPI y Uvicorn
+Primero, necesitas instalar FastAPI y Uvicorn, que es el servidor ASGI para ejecutar aplicaciones FastAPI.
+
+bash
+Copiar código
+pip install fastapi uvicorn
+2. Crear el Proyecto FastAPI
+Crea un archivo main.py (o el nombre que prefieras) que contendrá tu aplicación FastAPI. Aquí puedes definir las rutas y la lógica de backend.
+
+python
+Copiar código
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class ContactForm(BaseModel):
+    nombre: str
+    apellidos: str
+    correo: str
+    telefono: str
+    mensaje: str
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+@app.post("/contact")
+def handle_contact(form: ContactForm):
+    # Aquí puedes agregar la lógica para manejar el formulario
+    return {"status": "success", "data": form.dict()}
+3. Ejecutar el Servidor
+Ejecuta tu servidor FastAPI con Uvicorn.
+
+bash
+Copiar código
+uvicorn main:app --reload
+4. Actualizar el Frontend para Usar la API
+Ahora que tienes tu servidor FastAPI en funcionamiento, puedes hacer que tu frontend se comunique con él.
+
+Modificar el Formulario de Contacto
+En tu HTML, el formulario de contacto necesita ser actualizado para enviar datos al servidor FastAPI usando JavaScript. Asegúrate de que el action del formulario sea un endpoint de FastAPI y que el método sea POST.
+
+HTML:
+
+html
+Copiar código
+<form class="formulario" id="contactForm">
+    <div class="input-formulario">
+        <label for="nombre">Nombre</label>
+        <input type="text" placeholder="Pedro" id="nombre" name="nombre">
+    </div>
+    <div class="input-formulario">
+        <label for="apellidos">Apellido</label>
+        <input type="text" placeholder="Pedro" id="apellidos" name="apellidos">
+    </div>
+    <div class="input-formulario">
+        <label for="correo">Correo</label>
+        <input type="email" placeholder="ejemplo@ejemplo.com" id="correo" name="correo">
+    </div>
+    <div class="input-formulario">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" placeholder="+90 543 779 9410" id="telefono" name="telefono">
+    </div>
+    <div class="input-formulario">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje"></textarea>
+    </div>
+    <div class="btn-formulario">
+        <input type="submit" class="btn btn-verde" value="Enviar">
+    </div>
+</form>
+JavaScript (app.js):
+
+javascript
+Copiar código
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const data = {
+            nombre: formData.get('nombre'),
+            apellidos: formData.get('apellidos'),
+            correo: formData.get('correo'),
+            telefono: formData.get('telefono'),
+            mensaje: formData.get('mensaje')
+        };
+
+        try {
+            const response = await fetch('http://localhost:8000/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            const result = await response.json();
+            console.log(result);
+            if (result.status === 'success') {
+                alert('Mensaje enviado correctamente');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+});
+5. Asegurar la Conexión entre Frontend y Backend
+Asegúrate de que la URL de tu API en el fetch coincida con la dirección en la que está ejecutándose tu servidor FastAPI.
+Puedes usar http://localhost:8000 si estás desarrollando en local.
+6. Despliegue
+Para desplegar tu aplicación, asegúrate de que tu servidor FastAPI esté accesible y que la configuración de tu servidor web (como Nginx o Apache) esté correcta para enrutar las solicitudes a FastAPI.
+
+Con estos pasos, habrás integrado FastAPI con tu página web. La API manejará la lógica del backend, y tu página HTML funcionará como la interfaz de usuario que se comunica con la API.
